@@ -8,6 +8,7 @@ public class MinimumWindowSubstring76 {
 
     /**
      * chars[] 表示在目前S的子串中，每个字符缺少的数量; flag[] 表示字符是否包含在T中
+     *
      * @param s
      * @param t
      * @return
@@ -58,5 +59,75 @@ public class MinimumWindowSubstring76 {
             }
         }
         return min_size > s_len ? "" : s.substring(max_left, max_left + min_size);
+    }
+
+
+    /**
+     * 重写一遍，以供复习
+     * 题目要求在s中找出一个最短的子串，该子串包含t中全部的元素——并无顺序要求
+     * <p>
+     * 思路：
+     * 首先，将t中的字母及该字母出现的次数进行映射，以便查找。flag[i]表示字符i是否出现过，chars[i]表示i字符出现的次数
+     * 映射完成之后，l-r组成滑动窗口，窗口中是s中包含了t中全部元素的子串，通过l指针向右移动来减少子串长度，以找出最短子串
+     *
+     * @param s
+     * @param t
+     * @return
+     */
+    public String minWindow_(String s, String t) {
+
+        int[] chars = new int[128];
+        boolean[] flags = new boolean[128];
+
+        int sLength = s.length();
+        int tLength = t.length();
+
+        // 将t中的元素全部映射到flags和chars数组中来
+        for (int i = 0; i < tLength; ++i) {
+            char elem = t.charAt(i);
+            flags[elem] = true;
+            ++chars[elem];
+        }
+
+
+        int l = 0, max_l = 0, min_size = sLength + 1, cnt = 0;
+        for (int r = 0; r < sLength; ++r) {
+            char elem = s.charAt(r);
+
+            if (flags[elem]) {
+                if ((--chars[elem]) >= 0) {
+                    cnt++;
+                }
+
+                while (cnt == tLength && l <= r) {
+                    // 判断当前的子串长度是不是小于最短子串长度
+                    if (r - l + 1 < min_size) {
+                        min_size = r - l + 1;
+                        max_l = l;
+                    }
+                    // 判断去掉滑动窗口左边的元素后，子串是否还包含了t中全部的元素,若不再包含，将cnt-1
+                    if (flags[s.charAt(l)] && (++chars[s.charAt(l)]) > 0) {
+                        --cnt;
+                    }
+                    ++l;
+                }
+            }
+
+        }
+
+        return min_size > sLength ? "" : s.substring(max_l, max_l + min_size);
+    }
+
+
+    public static void main(String[] args) {
+
+        String s = "ADOBECODEBANC";
+        String t = "ABC";
+
+        MinimumWindowSubstring76 obj = new MinimumWindowSubstring76();
+        String res = obj.minWindow_(s, t);
+
+        System.out.println(res);
+
     }
 }
