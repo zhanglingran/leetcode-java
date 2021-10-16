@@ -1,7 +1,9 @@
 package gaoqi.java.collectionclass;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Vector;
 
 /**
  * 测试自定义list的功能
@@ -12,9 +14,7 @@ public class TestList {
 
     public static void main(String[] args) {
 
-        int capacity = 10;
-        System.out.println(capacity >> 1 + capacity);
-        System.out.println(capacity);
+        List<String> list = new Vector<>();
 
     }
 
