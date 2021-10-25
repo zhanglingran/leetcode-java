@@ -13,8 +13,6 @@ public class SingleElementInaSortedArray540 {
      *      那么当num[mid] 与 nums[mid+1]相等的时候，说明要找的元素在左边，否则在右边
      * @param nums
      * @return
-     *
-     * @TODO 代码需要进一步优化！10月23号进行修正
      */
     public int singleNonDuplicate(int[] nums) {
 
@@ -59,6 +57,7 @@ public class SingleElementInaSortedArray540 {
      *
      * @param nums
      * @return
+     * 代码进一步优化完成！10月23号进行修正
      */
     public int singleNonDuplicate1(int[] nums) {
 
