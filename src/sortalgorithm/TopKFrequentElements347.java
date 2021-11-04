@@ -42,6 +42,9 @@ public class TopKFrequentElements347 {
         return res;
     }
 
+    ///TODO 可以使用堆排序来考虑这个问题，即先应map对数据进行预处理，然后用过堆排序来找到前k个元素
+
+
     public static void main(String[] args) {
         TopKFrequentElements347 obj = new TopKFrequentElements347();
         int[] nums = {4,1,-1,2,-1,2,3};
