@@ -80,6 +80,8 @@ public class Permutatioin46 {
     public static void main(String[] args) {
         Permutatioin46 obj = new Permutatioin46();
         int[] nums = {1,2,3};
+
+
         List<List<Integer>> res = obj.permute1(nums);
         for (List<Integer> list : res) {
             for (int i = 0; i < list.size(); i++) {
