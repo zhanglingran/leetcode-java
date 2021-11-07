@@ -12,28 +12,40 @@ public class Permutatioin46 {
 
     public List<List<Integer>> permute(int[] nums) {
 
-        List<List<Integer>> res = new ArrayList<>();
-        dfs(Arrays.stream(nums).boxed().collect(Collectors.toList()), 0, res);
+        // 存储结果
+        List<List<Integer>> res = new ArrayList();
+        // 数组的长度
+        int len = nums.length;
+        // 从第 0 个位置开始填
+        dfs(Arrays.stream(nums).boxed().collect(Collectors.toList()), 0, len, res);
+
         return res;
     }
 
-    private void dfs(List<Integer> nums, int k, List<List<Integer>> res) {
+    /**
+     * 表示将元素填充到cur处
+     * @param nums 给定的待排列数组
+     * @param cur  当前需要填充的位置
+     * @param len  数组的长度
+     * @param res  结果集
+     */
+    public void dfs(List<Integer> nums, int cur, int len, List<List<Integer>> res) {
 
-        int n = nums.size();
-        if (k == n - 1){
-            res.add(new ArrayList<>(nums));
+        // 递归的结束条件：当cur等于len-1的时候，表示已经填到了末尾了，此时将结果记录下来
+        if (cur == len - 1) {
+            res.add(new ArrayList(nums));
             return;
         }
 
-        for (int i = k; i < n; i++) {
-            Collections.swap(nums, i, k);
-            dfs(nums, k+1, res);
-            // 回溯
-            Collections.swap(nums, i, k);
+        for (int i = cur; i < len; i++) {
+            // 交换之后，表示使用nums数组的第i个位置的元素填充某种排列的第cur个位置(将第i和第cur位置的元素互换)
+            Collections.swap(nums, i, cur);
+            // 接下来就递归的填充某排列的第cur+1位置
+            dfs(nums, cur+1, len, res);
+            // 回溯，即换回原来的排列顺序
+            Collections.swap(nums, i, cur);
         }
-
     }
-
 
     ///////////////////////////////////////////方法二//////////////////////////////////////////
 
