@@ -57,10 +57,7 @@ public class WordLadderII126 {
                 reverse = !reverse;
             }
 
-            // 将BFS遍历过的上一层的元素全部标记为已访问
-            for (String s : queueBegin) {
-                wordListSet.remove(s);
-            }
+            wordListSet.removeAll(queueBegin);
 
             int count = queueBegin.size();
 
@@ -90,7 +87,7 @@ public class WordLadderII126 {
                         }
 
                         // 不论是不是已经找到了最终的结果，都需要对该元素来建图
-                        if (wordListSet.contains(newStr) || queueEnd.contains(newStr)) {
+                        if (wordListSet.contains(newStr) || queueEndToSet.contains(newStr)) {
                             Set<String> subList;
                             if (reverse) {
                                 subList = map.get(newStr);
@@ -135,9 +132,6 @@ public class WordLadderII126 {
 
         if (map.get(beginWord) != null) {
             for (String str: map.get(beginWord)) {
-                if (str.equals(beginWord)) {
-                    continue;
-                }
                 path.add(str);
                 dfs(map, path, res, str, endWord);
                 path.remove(str);
