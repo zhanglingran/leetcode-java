@@ -24,6 +24,12 @@ public class Combinations77 {
      */
     private void dfs(int n, int k, int cur, List<List<Integer>> res, Deque<Integer> path) {
 
+        // 剪枝, 可将运行效率从18ms提高道2ms
+        if (path.size() + (n-cur+1) < k) {
+            return;
+        }
+
+
         if (path.size() == k) {
             res.add(new ArrayList<>(path));
             return;
