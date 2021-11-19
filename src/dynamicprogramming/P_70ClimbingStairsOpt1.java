@@ -59,4 +59,29 @@ public class P_70ClimbingStairsOpt1 {
         return dp[(n-1) % 3];
     }
 
+
+    /**
+     * 将上述使用三个变量来替换掉数字
+     * @param n
+     * @return
+     */
+    public int climbStairsOpt1(int n) {
+
+        if (n <= 2) {
+            return n;
+        }
+
+        // pre1 表示一步到达n点；pre2 表示两步到达n点；
+        int pre1 = 1, pre2 = 2, current = 0;
+
+
+        for (int i = 2; i < n; i++) {
+            current = pre2 + pre1;
+            pre1 = pre2;
+            pre2 = current;
+        }
+
+        return current;
+    }
+
 }
