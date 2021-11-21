@@ -19,7 +19,7 @@ class ListNode {
 /**
  * @author ZhangLingRan
  */
-public class LinkedListCycleII142 {
+public class P142_LinkedListCycleII {
 
     public ListNode detectCycle(ListNode head) {
 
