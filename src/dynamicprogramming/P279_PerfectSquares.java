@@ -12,6 +12,7 @@ public class P279_PerfectSquares {
     /**
      * 首先打表：来存储完全平方数，存放到 squares 中;
      * 获得n之后，对n开方，得到一个下标 n'：squares[n']就是距离n最大的完全平方数
+     * 状态转移方程：dp[i] = min{dp[i-j*j]} + 1; 其中j<=sqrt(i)
      * @param n
      * @return
      */
