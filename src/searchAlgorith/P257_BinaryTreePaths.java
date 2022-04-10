@@ -1,5 +1,3 @@
-package searchAlgorith;
-
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Deque;
@@ -18,7 +16,7 @@ public class P257_BinaryTreePaths {
      * @param root
      * @return
      */
-    public List<String> binaryTreePaths(TreeNode1 root) {
+    public List<String> binaryTreePaths(TreeNode root) {
 
         List<String> res = new ArrayList<>();
         Deque<Integer> deque = new ArrayDeque<>();
@@ -27,7 +25,7 @@ public class P257_BinaryTreePaths {
         return res;
     }
 
-    private void dfs(TreeNode1 root, List<String> res, Deque<Integer> deque) {
+    private void dfs(TreeNode root, List<String> res, Deque<Integer> deque) {
 
         deque.add(root.val);
 
@@ -57,19 +55,19 @@ public class P257_BinaryTreePaths {
 }
 
 
-class TreeNode {
+class TreeNode1 {
     int val;
-    TreeNode1 left;
-    TreeNode1 right;
+    TreeNode left;
+    TreeNode right;
 
-    TreeNode() {
+    TreeNode1() {
     }
 
-    TreeNode(int val) {
+    TreeNode1(int val) {
         this.val = val;
     }
 
-    TreeNode(int val, TreeNode1 left, TreeNode1 right) {
+    TreeNode1(int val, TreeNode left, TreeNode right) {
         this.val = val;
         this.left = left;
         this.right = right;

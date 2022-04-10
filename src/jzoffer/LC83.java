@@ -1,5 +1,3 @@
-package jzoffer;
-
 /**
  * @Author: ZhangLingRan
  * @Description: TODO
@@ -7,10 +5,10 @@ package jzoffer;
  */
 public class LC83 {
 
-    public ListNode deleteDuplicates(ListNode head) {
+    public ListNode1 deleteDuplicates(ListNode1 head) {
 
-        ListNode left = head;
-        ListNode right = head;
+        ListNode1 left = head;
+        ListNode1 right = head;
 
         while (right != null) {
             if (left == right) {

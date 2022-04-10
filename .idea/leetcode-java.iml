@@ -2,7 +2,24 @@
 <module type="JAVA_MODULE" version="4">
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
-    <content url="file://$MODULE_DIR$" />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src/ali" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/array" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/backtracking" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/binarysearch" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/dynamicprogramming" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/experiments" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/greedyalgorithm" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/jzoffer" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/searchAlgorith" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/sortalgorithm" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/string" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/top_100" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/twopointeralgorithm" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/weekly" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/huawei" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/tree" isTestSource="false" />
+    </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
