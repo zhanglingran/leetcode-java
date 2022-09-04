@@ -1,5 +1,4 @@
 package array;
-
 import javafx.util.Pair;
 
 import javax.sound.midi.MidiFileFormat;

@@ -8,16 +8,11 @@ import java.util.*;
 public class Offer692 {
 
     public List<String> topKFrequent(String[] words, int k) {
-        PriorityQueue<Word1> queue = new PriorityQueue<>(new Comparator<Word1>() {
-
-            @Override
-            public int compare(Word1 o1, Word1 o2) {
-
-                if (o1.count == o2.count) {
-                    return o1.word.compareTo(o2.word);
-                }
-                return o2.count - o1.count;
+        PriorityQueue<Word1> queue = new PriorityQueue<>((o1, o2) -> {
+            if (o1.count == o2.count) {
+                return o1.word.compareTo(o2.word);
             }
+            return o2.count - o1.count;
         });
 
 

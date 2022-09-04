@@ -19,6 +19,10 @@
       <sourceFolder url="file://$MODULE_DIR$/src/weekly" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/huawei" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/tree" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/360" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/JD" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/meituan" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
